@@ -25,25 +25,25 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        // let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
-        
-        // cell.eventDate.text = "some text"
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ActivityCell
+        let cell: ActivityCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! ActivityCell
+        var keys = Array(imagedata.keys)
+        let key = keys[indexPath.row]
+        keys = keys.sort({$0 < $1})
+        if (imagedata["2015"] != nil){
+            let image = imagedata[key]!["images"] as! [UIImage]
+            cell.actTime.text = imagedata[key]!["date"] as? String
+            if (image.count != 0){
+                cell.CellImage.image = image[0]
+            }
+        }
         return cell
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         if ((defaults.stringForKey("user")) != nil){
-            print("logged in")
-            //
             let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/whichUser")!)
             request.HTTPMethod = "POST"
             let postString = "email=" + defaults.stringForKey("user")!
-            //print(defaults.stringForKey("user"))
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
             
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
@@ -65,7 +65,6 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                         } else {
                             if let data = json as? NSArray {
                                 var user_key:String!
-                                //user_key = data[0]["key"]
                                 user_key = "appnamezpco1ae76f3t"
                                 let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAIYBDS3NHZ2AIPZ2A", secretKey: "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")
                                 let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
@@ -78,8 +77,6 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                 s3.listObjects(listRequest).continueWithBlock { (task) -> AnyObject? in
                                     let listObjectsOutput = task.result;
                                     for object in (listObjectsOutput?.contents)! {
-                                        //print("KEY1")
-                                        //print(object.key!)
                                         let img_key = object.key!
                                         let date = img_key.componentsSeparatedByString("-")[0]
                                         if (imagedata[date] != nil){
@@ -89,40 +86,25 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                         } else {
                                             imagedata[date] = [
                                                 "count": 1,
+                                                "date": date,
                                                 "images": [UIImage]()
                                             ]
                                         }
                                         
-                                        //print("KEY2")
-                                        //print(object.key!)
-                                        
                                         let s3URL = NSURL(string: "https://s3.amazonaws.com/\(user_key)/\(object.key!)")!
-                                        
-                                        // Read uploaded image and display in a view
                                         let imageData = NSData(contentsOfURL: s3URL)
                                         if let downloadedImageData = imageData
                                         {
-                                            //print("KEY3")
-                                            //print(object.key!)
                                             dispatch_async(dispatch_get_main_queue()) {
                                                 let image = UIImage(data: downloadedImageData)
                                                 var array = imagedata[date]!["images"] as! [UIImage]
                                                 array.append(image!)
                                                 imagedata[date]!["images"] = array
-                                                let myImageView:UIImageView = UIImageView()
-                                                myImageView.frame = CGRectMake(10, 100, 100, 100)
-                                                myImageView.image = image
-                                                myImageView.contentMode = UIViewContentMode.ScaleAspectFit
-                                                self.view.addSubview(myImageView)
+                                                self.tableView?.reloadData()
                                             }
                                         } else {
-                                            //print("didn't make it")
-                                            //print(object.key!)
                                         }
-                                        print("start")
-                                        print(imagedata)
                                     }
-                                    
                                     return nil
                                 }
                             }
@@ -133,12 +115,8 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
             task.resume()
-            //
-            
-            //
             
         } else {
-            print("not logged in")
             dispatch_async(dispatch_get_main_queue(), {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("Login") as! LoginController

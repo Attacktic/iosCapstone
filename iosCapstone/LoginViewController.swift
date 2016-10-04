@@ -24,7 +24,6 @@ class LoginController: UIViewController {
             let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/login")!)
             request.HTTPMethod = "POST"
             let postString = "email=" + EmailField.text! + "&pass="+PassField.text!;
-            print(postString);
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
             
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
@@ -39,13 +38,9 @@ class LoginController: UIViewController {
                 if (statusCode == 200) {
                     let responseString = String(data: data!, encoding: NSUTF8StringEncoding)
                     if (responseString == "Login Verified"){
-                        //redirect to users home page
-                        //
-                        //
                         defaults.setObject(self.EmailField.text, forKey: "user")
                         print(error)
                         dispatch_async(dispatch_get_main_queue(), {
-                            //Code that presents or dismisses a view controller here
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                             let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("Dashboard") as! DashController
                             self.presentViewController(nextViewController, animated:true, completion:nil)
@@ -63,7 +58,6 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view ready")
         if ((defaults.stringForKey("user")) != nil){
             dispatch_async(dispatch_get_main_queue(), {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -71,14 +65,11 @@ class LoginController: UIViewController {
                 self.presentViewController(nextViewController, animated:true, completion:nil)
             })
         } else {
-            print("not logged in")
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     

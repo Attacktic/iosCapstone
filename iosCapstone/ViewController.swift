@@ -28,7 +28,6 @@ class ViewController: UIViewController {
                 let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/appSetUp")!)
                 request.HTTPMethod = "POST"
                 let postString = "email=" + EmailField.text! + "&full_name="+NameField.text!+"&phone="+PhoneField.text!+"&password="+PasswordField.text!;
-                //print(postString);
                 request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
                 let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
                     guard error == nil && data != nil else {
@@ -42,9 +41,7 @@ class ViewController: UIViewController {
                     if (statusCode == 200) {
                         let responseString = String(data: data!, encoding: NSUTF8StringEncoding)
                         if (responseString == "Updated user"){
-                            //redirect to users home page
                             dispatch_async(dispatch_get_main_queue(), {
-                                //Code that presents or dismisses a view controller here
                                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                                 let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("Dashboard") as! DashController
                                 self.presentViewController(nextViewController, animated:true, completion:nil)
@@ -78,7 +75,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
