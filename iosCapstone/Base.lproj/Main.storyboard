@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -222,7 +223,7 @@
         <!--Act View-->
         <scene sceneID="LXj-KY-5EW">
             <objects>
-                <viewController storyboardIdentifier="activityView" id="sqf-jb-B8f" customClass="ActView" customModule="iosCapstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="activityView" automaticallyAdjustsScrollViewInsets="NO" id="sqf-jb-B8f" customClass="ActView" customModule="iosCapstone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IVX-6o-Vc9"/>
                         <viewControllerLayoutGuide type="bottom" id="4HL-jT-C5y"/>
@@ -238,8 +239,9 @@
                                     <segue destination="cEr-C3-sKD" kind="show" id="1rb-Sh-1Ef"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BpA-kQ-hlk">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BpA-kQ-hlk">
                                 <rect key="frame" x="14" y="60" width="380" height="668"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OQy-qs-4wH">
                                     <size key="itemSize" width="117" height="114"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -247,23 +249,36 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SGH-U4-iUb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imgcell" id="SGH-U4-iUb" customClass="CollectionViewCell" customModule="iosCapstone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="117" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="117" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwN-78-6BA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwN-78-6BA">
                                                     <rect key="frame" x="0.0" y="0.0" width="117" height="114"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="gwN-78-6BA" firstAttribute="leading" secondItem="SGH-U4-iUb" secondAttribute="leadingMargin" id="NLa-pp-qdR"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="gwN-78-6BA" secondAttribute="bottom" id="fYb-LI-MVe"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="gwN-78-6BA" secondAttribute="trailing" id="qxn-LL-SqM"/>
+                                            <constraint firstItem="gwN-78-6BA" firstAttribute="top" secondItem="SGH-U4-iUb" secondAttribute="topMargin" id="rlT-Hv-FsX"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellImage" destination="gwN-78-6BA" id="Fpb-bX-0ZV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="sqf-jb-B8f" id="iK8-jc-K7j"/>
+                                    <outlet property="delegate" destination="sqf-jb-B8f" id="o3Y-US-ijp"/>
+                                </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-XO-2VF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-XO-2VF">
                                 <rect key="frame" x="191" y="24" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -271,15 +286,56 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BpA-kQ-hlk" firstAttribute="top" secondItem="Y9I-XO-2VF" secondAttribute="bottom" constant="15" id="5P4-Ox-EhD"/>
+                            <constraint firstItem="BpA-kQ-hlk" firstAttribute="trailing" secondItem="EuE-Jo-cLB" secondAttribute="trailingMargin" id="8sl-gW-cIf"/>
+                            <constraint firstItem="BpA-kQ-hlk" firstAttribute="leading" secondItem="EuE-Jo-cLB" secondAttribute="leadingMargin" id="Qmw-l0-rNC"/>
+                            <constraint firstItem="4HL-jT-C5y" firstAttribute="top" secondItem="BpA-kQ-hlk" secondAttribute="bottom" constant="10" id="rtA-Bs-Aky"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="actTitle" destination="Y9I-XO-2VF" id="8y3-Ve-4ie"/>
+                        <outlet property="imagesCol" destination="BpA-kQ-hlk" id="qrr-3K-NAC"/>
+                        <segue destination="McM-BQ-Pxy" kind="show" identifier="showImage" id="VTN-KL-o3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toX-Ff-Ksm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101" y="-443"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="tTb-CV-DA0">
+            <objects>
+                <viewController id="McM-BQ-Pxy" customClass="ImageViewController" customModule="iosCapstone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gOr-hT-hjy"/>
+                        <viewControllerLayoutGuide type="bottom" id="HMr-Jz-ngF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TkE-XQ-0BB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bln-AH-8BM">
+                                <rect key="frame" x="0.0" y="-10" width="414" height="746"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Bln-AH-8BM" secondAttribute="trailing" id="1ev-BX-xyH"/>
+                            <constraint firstItem="Bln-AH-8BM" firstAttribute="top" secondItem="TkE-XQ-0BB" secondAttribute="topMargin" constant="-10" id="Etf-2k-nVr"/>
+                            <constraint firstItem="Bln-AH-8BM" firstAttribute="bottom" secondItem="HMr-Jz-ngF" secondAttribute="top" id="mag-Bu-Y98"/>
+                            <constraint firstItem="Bln-AH-8BM" firstAttribute="leading" secondItem="TkE-XQ-0BB" secondAttribute="leading" id="zUT-se-45u"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="displayImage" destination="Bln-AH-8BM" id="UtR-oc-pe1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gW7-fo-DaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640" y="-438"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="FZy-pA-as0">

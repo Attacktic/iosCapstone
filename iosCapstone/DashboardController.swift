@@ -30,7 +30,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         var keys = Array(imagedata.keys)
         let key = keys[indexPath.row]
         keys = keys.sort({$0 < $1})
-        if (imagedata["2015"] != nil){
+        if (imagedata[key] != nil){
             let image = imagedata[key]!["images"] as! [UIImage]
             cell.actTime.text = imagedata[key]!["date"] as? String
             if (image.count != 0){
@@ -49,22 +49,14 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         var keys = Array(imagedata.keys)
         let key = keys[indexPath!.row]
         keys = keys.sort({$0 < $1})
-        print("going")
-        print(imagedata[key]!["date"])
-        valueToPass = imagedata[key]!["date"] as? String
+        let sDate = (imagedata[key]!["date"] as? String)!.componentsSeparatedByString("-")[0]
+        valueToPass = sDate
         performSegueWithIdentifier("viewEach", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("happening")
-        
         if (segue.identifier == "viewEach") {
-            // initialize new view controller and cast it as your view controller
-            // your new view controller should have property that will store passed value
             let destination = segue.destinationViewController as? ActView
-            
-            print("destination")
-            print(destination!.textValue)
             destination!.textValue = valueToPass as String
         }
     }

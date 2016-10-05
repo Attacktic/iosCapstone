@@ -17,6 +17,8 @@
 		9C0B0C201DA4088E009EAB6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C1F1DA4088E009EAB6D /* LoginViewController.swift */; };
 		9C0B0C261DA41055009EAB6D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C251DA41055009EAB6D /* ActivityCell.swift */; };
 		9C0B0C2A1DA4BFEC009EAB6D /* ActView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C291DA4BFEC009EAB6D /* ActView.swift */; };
+		9C0B0C2C1DA4E2C3009EAB6D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C2B1DA4E2C3009EAB6D /* CollectionViewCell.swift */; };
+		9C0B0C2E1DA4E393009EAB6D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C2D1DA4E393009EAB6D /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9C0B0C1F1DA4088E009EAB6D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C0B0C251DA41055009EAB6D /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		9C0B0C291DA4BFEC009EAB6D /* ActView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActView.swift; sourceTree = "<group>"; };
+		9C0B0C2B1DA4E2C3009EAB6D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9C0B0C2D1DA4E393009EAB6D /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 			children = (
 				9C0B0C091DA4018F009EAB6D /* AppDelegate.swift */,
 				9C0B0C0B1DA4018F009EAB6D /* ViewController.swift */,
+				9C0B0C2B1DA4E2C3009EAB6D /* CollectionViewCell.swift */,
+				9C0B0C2D1DA4E393009EAB6D /* ImageViewController.swift */,
 				9C0B0C0D1DA4018F009EAB6D /* Main.storyboard */,
 				9C0B0C291DA4BFEC009EAB6D /* ActView.swift */,
 				9C0B0C1F1DA4088E009EAB6D /* LoginViewController.swift */,
@@ -225,8 +231,10 @@
 				9C0B0C201DA4088E009EAB6D /* LoginViewController.swift in Sources */,
 				9C0B0C0C1DA4018F009EAB6D /* ViewController.swift in Sources */,
 				9C0B0C261DA41055009EAB6D /* ActivityCell.swift in Sources */,
+				9C0B0C2C1DA4E2C3009EAB6D /* CollectionViewCell.swift in Sources */,
 				9C0B0C2A1DA4BFEC009EAB6D /* ActView.swift in Sources */,
 				9C0B0C1E1DA4083A009EAB6D /* DashboardController.swift in Sources */,
+				9C0B0C2E1DA4E393009EAB6D /* ImageViewController.swift in Sources */,
 				9C0B0C0A1DA4018F009EAB6D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
