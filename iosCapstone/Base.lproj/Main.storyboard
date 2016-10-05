@@ -316,9 +316,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bln-AH-8BM">
-                                <rect key="frame" x="0.0" y="-10" width="414" height="746"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bln-AH-8BM">
+                                <rect key="frame" x="0.0" y="115" width="414" height="417"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xka-0S-ymG">
+                                <rect key="frame" x="16" y="11" width="30" height="30"/>
+                                <state key="normal" title="&lt;--"/>
+                                <connections>
+                                    <segue destination="sqf-jb-B8f" kind="show" identifier="goBack" id="E5d-Cv-Tq0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -441,6 +448,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Oja-W4-4w0"/>
         <segue reference="VNM-FS-tgR"/>
     </inferredMetricsTieBreakers>
 </document>

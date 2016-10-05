@@ -13,6 +13,7 @@ var imagedata: [String: [String: Any]] = [:]
 var valueToPass:String!
 
 class DashController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let refresher = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imagedata.count
@@ -61,8 +62,8 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func getData()
+    {
         imagedata = [:]
         if ((defaults.stringForKey("user")) != nil){
             let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/whichUser")!)
@@ -105,7 +106,6 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                         let date = img_key.componentsSeparatedByString("-")[0]
                                         if (imagedata[date] != nil){
                                             let i = imagedata[date]!["count"] as! Int
-                                            
                                             imagedata[date]!["count"] = i + 1
                                         } else {
                                             imagedata[date] = [
@@ -150,6 +150,26 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
             })
             
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView!.alwaysBounceVertical = true
+        refresher.tintColor = UIColor.redColor()
+        refresher.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
+        tableView!.addSubview(refresher)
+        getData()
+    }
+    
+    func stopRefresher()
+    {
+        refresher.endRefreshing()
+    }
+    
+    func loadData()
+    {
+        getData()
+        stopRefresher()
     }
     
     override func didReceiveMemoryWarning() {
