@@ -63,6 +63,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagedata = [:]
         if ((defaults.stringForKey("user")) != nil){
             let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/whichUser")!)
             request.HTTPMethod = "POST"
@@ -121,7 +122,9 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                             dispatch_async(dispatch_get_main_queue()) {
                                                 let image = UIImage(data: downloadedImageData)
                                                 var array = imagedata[date]!["images"] as! [UIImage]
-                                                array.append(image!)
+                                                if !array.contains(image!) {
+                                                    array.append(image!)
+                                                }
                                                 imagedata[date]!["images"] = array
                                                 self.tableView?.reloadData()
                                             }
