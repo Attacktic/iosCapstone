@@ -198,7 +198,6 @@
                                         <connections>
                                             <outlet property="CellImage" destination="JQQ-Gq-Y4s" id="yFl-x0-0gR"/>
                                             <outlet property="actTime" destination="UQ6-eu-oMh" id="snq-N0-Vdb"/>
-                                            <segue destination="sqf-jb-B8f" kind="show" identifier="viewEach" id="6Ce-Hp-nJQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -213,16 +212,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="tableView" destination="UOB-4i-fV0" id="lfn-wz-tDP"/>
+                        <segue destination="sqf-jb-B8f" kind="show" identifier="viewEach" id="Oja-W4-4w0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTu-3Y-atx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="600" y="-443"/>
         </scene>
-        <!--View Controller-->
+        <!--Act View-->
         <scene sceneID="LXj-KY-5EW">
             <objects>
-                <viewController storyboardIdentifier="activityView" id="sqf-jb-B8f" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="activityView" id="sqf-jb-B8f" customClass="ActView" customModule="iosCapstone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IVX-6o-Vc9"/>
                         <viewControllerLayoutGuide type="bottom" id="4HL-jT-C5y"/>
@@ -263,10 +263,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-XO-2VF">
+                                <rect key="frame" x="191" y="24" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="actTitle" destination="Y9I-XO-2VF" id="8y3-Ve-4ie"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toX-Ff-Ksm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

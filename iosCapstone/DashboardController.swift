@@ -11,6 +11,7 @@ import UIKit
 import AWSS3
 var imagedata: [String: [String: Any]] = [:]
 var valueToPass:String!
+
 class DashController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +38,35 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
+        var keys = Array(imagedata.keys)
+        let key = keys[indexPath!.row]
+        keys = keys.sort({$0 < $1})
+        print("going")
+        print(imagedata[key]!["date"])
+        valueToPass = imagedata[key]!["date"] as? String
+        performSegueWithIdentifier("viewEach", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("happening")
+        
+        if (segue.identifier == "viewEach") {
+            // initialize new view controller and cast it as your view controller
+            // your new view controller should have property that will store passed value
+            let destination = segue.destinationViewController as? ActView
+            
+            print("destination")
+            print(destination!.textValue)
+            destination!.textValue = valueToPass as String
+        }
     }
     
     override func viewDidLoad() {
