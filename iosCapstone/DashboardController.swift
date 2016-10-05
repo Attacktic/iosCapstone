@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AWSS3
 var imagedata: [String: [String: Any]] = [:]
-
+var valueToPass:String!
 class DashController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +38,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         return cell
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if ((defaults.stringForKey("user")) != nil){
@@ -86,7 +87,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                         } else {
                                             imagedata[date] = [
                                                 "count": 1,
-                                                "date": date,
+                                                "date": img_key,
                                                 "images": [UIImage]()
                                             ]
                                         }
