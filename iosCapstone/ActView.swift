@@ -29,6 +29,7 @@ class ActView: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = self.imagesCol.dequeueReusableCellWithReuseIdentifier("imgcell", forIndexPath: indexPath) as! CollectionViewCell
         cell.cellImage.image = thisDisplay[indexPath.row]
+        cell.cellImage.contentMode = .ScaleAspectFit
         return cell
     }
     

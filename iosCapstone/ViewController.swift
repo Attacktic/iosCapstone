@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func SignUp(sender: AnyObject) {
         if (EmailField.text == "" || PhoneField.text == "" || NameField.text == "" || PasswordField.text == "" || CPasswordField.text == ""){
+            AlertMessage.hidden = !AlertMessage.hidden
             AlertMessage.text = "Please Complete all Text Fields."
         } else {
             if (PasswordField.text! != CPasswordField.text!){

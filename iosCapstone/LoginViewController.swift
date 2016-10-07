@@ -19,6 +19,7 @@ class LoginController: UIViewController {
     
     @IBAction func LogIn(sender: AnyObject) {
         if (EmailField.text == "" || PassField.text == ""){
+            AlertMessage.hidden = !AlertMessage.hidden
             AlertMessage.text = "Please Enter Email and Password."
         } else {
             let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/login")!)

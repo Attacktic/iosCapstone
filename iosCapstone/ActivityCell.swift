@@ -11,9 +11,12 @@ class ActivityCell: UITableViewCell {
     
     @IBOutlet weak var CellImage: UIImageView!
     @IBOutlet weak var actTime: UILabel!
+    @IBOutlet weak var items: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //get number of items
+        CellImage.contentMode = .ScaleAspectFit
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

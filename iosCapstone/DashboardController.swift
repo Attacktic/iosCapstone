@@ -33,7 +33,8 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         keys = keys.sort({$0 < $1})
         if (imagedata[key] != nil){
             let image = imagedata[key]!["images"] as! [UIImage]
-            cell.actTime.text = imagedata[key]!["date"] as? String
+            let val = imagedata[key]!["date"] as? String
+            cell.actTime.text = "Last: "+val!
             if (image.count != 0){
                 cell.CellImage.image = image[0]
             }
@@ -155,7 +156,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView!.alwaysBounceVertical = true
-        refresher.tintColor = UIColor.redColor()
+        refresher.tintColor = UIColor.blackColor()
         refresher.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
         tableView!.addSubview(refresher)
         getData()

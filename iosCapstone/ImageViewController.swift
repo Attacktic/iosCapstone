@@ -17,6 +17,7 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.displayImage.image = imageValue
+        displayImage.contentMode = .ScaleAspectFit
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
