@@ -67,7 +67,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         imagedata = [:]
         if ((defaults.stringForKey("user")) != nil){
-            let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/whichUser")!)
+            let request = NSMutableURLRequest(URL: NSURL(string: "https://casptonebackend.herokuapp.com/whichUser")!)
             request.HTTPMethod = "POST"
             let postString = "email=" + defaults.stringForKey("user")!
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -146,7 +146,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             dispatch_async(dispatch_get_main_queue(), {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("Login") as! LoginController
+                let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("Dashboard") as! DashController
                 self.presentViewController(nextViewController, animated:true, completion:nil)
             })
             

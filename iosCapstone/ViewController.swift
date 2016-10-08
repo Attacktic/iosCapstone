@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             if (PasswordField.text! != CPasswordField.text!){
                 AlertMessage.text = "Passwords don't match"
             } else {
-                let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/appSetUp")!)
+                let request = NSMutableURLRequest(URL: NSURL(string: "https://casptonebackend.herokuapp.com/appSetUp")!)
                 request.HTTPMethod = "POST"
                 let postString = "email=" + EmailField.text! + "&full_name="+NameField.text!+"&phone="+PhoneField.text!+"&password="+PasswordField.text!;
                 request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)

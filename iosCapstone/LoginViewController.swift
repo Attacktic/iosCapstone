@@ -22,7 +22,7 @@ class LoginController: UIViewController {
             AlertMessage.hidden = !AlertMessage.hidden
             AlertMessage.text = "Please Enter Email and Password."
         } else {
-            let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/login")!)
+            let request = NSMutableURLRequest(URL: NSURL(string: "https://casptonebackend.herokuapp.com/login")!)
             request.HTTPMethod = "POST"
             let postString = "email=" + EmailField.text! + "&pass="+PassField.text!;
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
