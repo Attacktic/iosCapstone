@@ -15,7 +15,6 @@ class ActivityCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //get number of items
         CellImage.contentMode = .ScaleAspectFit
     }
     
