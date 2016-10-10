@@ -16,7 +16,6 @@ class ActivityCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        CellImage.contentMode = .ScaleAspectFit
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

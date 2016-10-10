@@ -36,14 +36,14 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
             let val = imagedata[key]!["date"] as? String
             let day = val!.componentsSeparatedByString(":")[0]
             let time = val!.componentsSeparatedByString(":")[1].componentsSeparatedByString("-")[3]
-            cell.actTime.text = day + " at " + time + amPm(time)
+            cell.actTime.text = day + " at " + time + " " + amPm(time).uppercaseString
             let numImages = String(image.count)
             if (numImages == "1"){
                 cell.items.text = numImages + " Frame"
             } else {
                 cell.items.text = numImages + " Frames"
             }
-            cell.lastAct.text = "Last: minute " + val!.componentsSeparatedByString(":")[2]
+            cell.lastAct.text = "Last active at :" + val!.componentsSeparatedByString(":")[2]
             if (image.count != 0){
                 cell.CellImage.image = image[0]
             }
