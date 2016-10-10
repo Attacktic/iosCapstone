@@ -43,7 +43,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
             } else {
                 cell.items.text = numImages + " Frames"
             }
-            
+            cell.lastAct.text = "Last: minute " + val!.componentsSeparatedByString(":")[2]
             if (image.count != 0){
                 cell.CellImage.image = image[0]
             }

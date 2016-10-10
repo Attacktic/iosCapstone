@@ -278,7 +278,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ6-eu-oMh">
-                                                    <rect key="frame" x="0.0" y="237" width="414" height="21"/>
+                                                    <rect key="frame" x="0.0" y="229" width="414" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99948958333333338" green="0.99948958333333338" blue="0.99948958333333338" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -292,6 +292,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQQ-Gq-Y4s">
                                                     <rect key="frame" x="8" y="8" width="398" height="192"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-X6-xmi">
+                                                    <rect key="frame" x="8" y="251" width="398" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="7uk-9i-xKw" secondAttribute="bottom" id="YWF-sv-Q8F"/>
@@ -302,6 +308,7 @@
                                             <outlet property="CellImage" destination="JQQ-Gq-Y4s" id="yFl-x0-0gR"/>
                                             <outlet property="actTime" destination="UQ6-eu-oMh" id="snq-N0-Vdb"/>
                                             <outlet property="items" destination="BRt-nK-8oH" id="3ho-4E-ry2"/>
+                                            <outlet property="lastAct" destination="0Th-X6-xmi" id="GQz-aD-Fl9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

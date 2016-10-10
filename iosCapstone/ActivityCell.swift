@@ -12,6 +12,7 @@ class ActivityCell: UITableViewCell {
     @IBOutlet weak var CellImage: UIImageView!
     @IBOutlet weak var actTime: UILabel!
     @IBOutlet weak var items: UILabel!
+    @IBOutlet weak var lastAct: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
