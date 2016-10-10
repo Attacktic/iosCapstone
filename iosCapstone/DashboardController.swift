@@ -51,8 +51,9 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         var keys = Array(imagedata.keys)
         let key = keys[indexPath!.row]
         keys = keys.sort({$0 < $1})
-        let sDate = (imagedata[key]!["date"] as? String)!.componentsSeparatedByString("-")[0]
-        valueToPass = sDate
+        let sDate = (imagedata[key]!["date"] as? String)!.componentsSeparatedByString(":")[1]
+        let date = sDate.componentsSeparatedByString("-")[0]+sDate.componentsSeparatedByString("-")[1]+sDate.componentsSeparatedByString("-")[2]+sDate.componentsSeparatedByString("-")[3]
+        valueToPass = date
         performSegueWithIdentifier("viewEach", sender: self)
     }
     
@@ -91,7 +92,8 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                         } else {
                             if let data = json as? NSArray {
                                 var user_key:String!
-                                user_key = "appnamezpco1ae76f3t"
+                                //user_key = "appnamezpco1ae76f3t"
+                                user_key = "appname8qj3m42cg1l6"
                                 let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAIYBDS3NHZ2AIPZ2A", secretKey: "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")
                                 let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
                                 AWSS3.registerS3WithConfiguration(configuration, forKey: user_key)
@@ -104,7 +106,9 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                     let listObjectsOutput = task.result;
                                     for object in (listObjectsOutput?.contents)! {
                                         let img_key = object.key!
-                                        let date = img_key.componentsSeparatedByString("-")[0]
+                                        let date_s = img_key.componentsSeparatedByString(":")[1]
+                                        let date = date_s.componentsSeparatedByString("-")[0]+date_s.componentsSeparatedByString("-")[1]+date_s.componentsSeparatedByString("-")[2]+date_s.componentsSeparatedByString("-")[3]
+                                        print("DATEEEE " + date)
                                         if (imagedata[date] != nil){
                                             let i = imagedata[date]!["count"] as! Int
                                             imagedata[date]!["count"] = i + 1
