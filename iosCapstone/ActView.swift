@@ -19,7 +19,6 @@ class ActView: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         actTitle.text = textValue
         thisDisplay = []
         thisDisplay = imagedata[actTitle.text!]!["images"] as! [UIImage]
-        print(imagedata)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,7 +43,6 @@ class ActView: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             let indexPath = indexPaths[0] as NSIndexPath
             let vc = segue.destinationViewController as! ImageViewController
             vc.imageValue = thisDisplay[indexPath.row]
-            print(vc.imageValue)
         }
     }
     

@@ -62,7 +62,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("main view")
         if ((defaults.stringForKey("user")) != nil){
             dispatch_async(dispatch_get_main_queue(), {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -125,5 +124,26 @@ func prettyDate(date: String) -> (String){
     let am = amPm(time)
     let result = month + " " + day + " at " + time + am
     return result
+}
+
+extension NSDateFormatter {
+    convenience init(dateFormat: String) {
+        self.init()
+        self.dateFormat =  dateFormat
+    }
+}
+
+extension NSDate {
+    struct Formatter {
+        static let custom = NSDateFormatter(dateFormat: "dd-MMMM-yyyy")
+    }
+    var customFormatted: String {
+        return Formatter.custom.stringFromDate(self)
+    }
+}
+
+func today(date: String) -> (String){
+    let date = NSDate().customFormatted
+    return date
 }
 

@@ -25,7 +25,6 @@ class ImageViewController: UIViewController {
         if segue.identifier == "goBack"
         {
             let destination = segue.destinationViewController as? ActView
-            print(imagedata)
             var keys = Array(imagedata.keys)
             for (index, el) in imagedata.enumerate(){
                 let key = keys[index]

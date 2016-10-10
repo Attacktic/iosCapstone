@@ -34,7 +34,13 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (imagedata[key] != nil){
             let image = imagedata[key]!["images"] as! [UIImage]
             let val = imagedata[key]!["date"] as? String
-            let day = val!.componentsSeparatedByString(":")[0]
+            let todayat = val!.componentsSeparatedByString(":")[1]
+            let today1 = todayat.endIndex.advancedBy(-3)
+            let todayis = todayat.substringToIndex(today1)
+            var day = val!.componentsSeparatedByString(":")[0]
+            if (todayis == today("test")){
+                day = "Today"
+            }
             let time = val!.componentsSeparatedByString(":")[1].componentsSeparatedByString("-")[3]
             cell.actTime.text = day + " at " + time + " " + amPm(time).uppercaseString
             let numImages = String(image.count)
@@ -52,7 +58,6 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        print("You selected cell #\(indexPath.row)!")
         
         // Get Cell Label
         let indexPath = tableView.indexPathForSelectedRow
@@ -117,7 +122,6 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                         let img_key = object.key!
                                         let date_s = img_key.componentsSeparatedByString(":")[1]
                                         let date = date_s.componentsSeparatedByString("-")[0]+date_s.componentsSeparatedByString("-")[1]+date_s.componentsSeparatedByString("-")[2]+date_s.componentsSeparatedByString("-")[3]
-                                        print("DATEEEE " + date)
                                         if (imagedata[date] != nil){
                                             let i = imagedata[date]!["count"] as! Int
                                             imagedata[date]!["count"] = i + 1
