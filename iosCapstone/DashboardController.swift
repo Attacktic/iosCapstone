@@ -28,6 +28,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        UIColor.clearColor()
         let cell: ActivityCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! ActivityCell
         var keys = Array(imagedata.keys)
         let key = keys[indexPath.row]
@@ -184,7 +185,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView!.alwaysBounceVertical = true
-        refresher.tintColor = UIColor.blackColor()
+        refresher.tintColor = UIColor.whiteColor()
         refresher.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
         tableView!.addSubview(refresher)
         getData()

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C0B0C051DA4018E009EAB6D"
-               BuildableName = "iosCapstone.app"
-               BlueprintName = "iosCapstone"
+               BuildableName = "PrivatePy.app"
+               BlueprintName = "PrivatePy"
                ReferencedContainer = "container:iosCapstone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C0B0C051DA4018E009EAB6D"
-            BuildableName = "iosCapstone.app"
-            BlueprintName = "iosCapstone"
+            BuildableName = "PrivatePy.app"
+            BlueprintName = "PrivatePy"
             ReferencedContainer = "container:iosCapstone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C0B0C051DA4018E009EAB6D"
-            BuildableName = "iosCapstone.app"
-            BlueprintName = "iosCapstone"
+            BuildableName = "PrivatePy.app"
+            BlueprintName = "PrivatePy"
             ReferencedContainer = "container:iosCapstone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C0B0C051DA4018E009EAB6D"
-            BuildableName = "iosCapstone.app"
-            BlueprintName = "iosCapstone"
+            BuildableName = "PrivatePy.app"
+            BlueprintName = "PrivatePy"
             ReferencedContainer = "container:iosCapstone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

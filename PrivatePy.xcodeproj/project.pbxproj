@@ -27,7 +27,7 @@
 		44F2782C1AF79BF48BA14301 /* Pods-iosCapstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosCapstone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosCapstone/Pods-iosCapstone.debug.xcconfig"; sourceTree = "<group>"; };
 		45EADEC9CF320334EEBFD9A8 /* Pods_iosCapstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosCapstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B7881D2F7B463359FDC890 /* Pods-iosCapstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosCapstone.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosCapstone/Pods-iosCapstone.release.xcconfig"; sourceTree = "<group>"; };
-		9C0B0C061DA4018E009EAB6D /* iosCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0B0C061DA4018E009EAB6D /* PrivatePy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivatePy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0B0C091DA4018F009EAB6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C0B0C0B1DA4018F009EAB6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C0B0C0E1DA4018F009EAB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		9C0B0C071DA4018E009EAB6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C0B0C061DA4018E009EAB6D /* iosCapstone.app */,
+				9C0B0C061DA4018E009EAB6D /* PrivatePy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,9 +115,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C0B0C051DA4018E009EAB6D /* iosCapstone */ = {
+		9C0B0C051DA4018E009EAB6D /* PrivatePy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C0B0C181DA4018F009EAB6D /* Build configuration list for PBXNativeTarget "iosCapstone" */;
+			buildConfigurationList = 9C0B0C181DA4018F009EAB6D /* Build configuration list for PBXNativeTarget "PrivatePy" */;
 			buildPhases = (
 				BE19C581008D5780DC41C0FE /* [CP] Check Pods Manifest.lock */,
 				9C0B0C021DA4018E009EAB6D /* Sources */,
@@ -130,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = iosCapstone;
+			name = PrivatePy;
 			productName = iosCapstone;
-			productReference = 9C0B0C061DA4018E009EAB6D /* iosCapstone.app */;
+			productReference = 9C0B0C061DA4018E009EAB6D /* PrivatePy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +150,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C0B0C011DA4018E009EAB6D /* Build configuration list for PBXProject "iosCapstone" */;
+			buildConfigurationList = 9C0B0C011DA4018E009EAB6D /* Build configuration list for PBXProject "PrivatePy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,7 +163,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C0B0C051DA4018E009EAB6D /* iosCapstone */,
+				9C0B0C051DA4018E009EAB6D /* PrivatePy */,
 			);
 		};
 /* End PBXProject section */
@@ -381,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C0B0C011DA4018E009EAB6D /* Build configuration list for PBXProject "iosCapstone" */ = {
+		9C0B0C011DA4018E009EAB6D /* Build configuration list for PBXProject "PrivatePy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C0B0C161DA4018F009EAB6D /* Debug */,
@@ -390,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C0B0C181DA4018F009EAB6D /* Build configuration list for PBXNativeTarget "iosCapstone" */ = {
+		9C0B0C181DA4018F009EAB6D /* Build configuration list for PBXNativeTarget "PrivatePy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C0B0C191DA4018F009EAB6D /* Debug */,
