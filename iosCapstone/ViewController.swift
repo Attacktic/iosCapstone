@@ -9,6 +9,7 @@
 import UIKit
 var defaults = NSUserDefaults.standardUserDefaults()
 
+
 class ViewController: UIViewController {
     @IBOutlet weak var Titleee: UILabel!
     @IBOutlet weak var EmailField: UITextField!
@@ -16,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var AlertMessage: UILabel!
     @IBOutlet weak var CPasswordField: UITextField!
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     @IBAction func SignUp(sender: AnyObject) {
         if (EmailField.text == "" || NameField.text == "" || PasswordField.text == "" || CPasswordField.text == ""){
@@ -60,7 +65,12 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         if ((defaults.stringForKey("user")) != nil){
             dispatch_async(dispatch_get_main_queue(), {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -75,8 +85,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
 }
 
 func ordinal_suffix_of(i: String) -> (String){

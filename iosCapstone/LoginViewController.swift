@@ -12,10 +12,12 @@ import UIKit
 class LoginController: UIViewController {
 
     @IBOutlet weak var EmailField: UITextField!
-    
     @IBOutlet weak var PassField: UITextField!
-    
     @IBOutlet weak var AlertMessage: UILabel!
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     @IBAction func LogIn(sender: AnyObject) {
         if (EmailField.text == "" || PassField.text == ""){
@@ -59,6 +61,11 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        
         if ((defaults.stringForKey("user")) != nil){
             dispatch_async(dispatch_get_main_queue(), {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
