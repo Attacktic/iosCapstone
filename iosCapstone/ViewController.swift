@@ -13,13 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var Titleee: UILabel!
     @IBOutlet weak var EmailField: UITextField!
     @IBOutlet weak var NameField: UITextField!
-    @IBOutlet weak var PhoneField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var AlertMessage: UILabel!
     @IBOutlet weak var CPasswordField: UITextField!
     
     @IBAction func SignUp(sender: AnyObject) {
-        if (EmailField.text == "" || PhoneField.text == "" || NameField.text == "" || PasswordField.text == "" || CPasswordField.text == ""){
+        if (EmailField.text == "" || NameField.text == "" || PasswordField.text == "" || CPasswordField.text == ""){
             AlertMessage.hidden = !AlertMessage.hidden
             AlertMessage.text = "Please Complete all Text Fields."
         } else {
@@ -28,7 +27,7 @@ class ViewController: UIViewController {
             } else {
                 let request = NSMutableURLRequest(URL: NSURL(string: "https://casptonebackend.herokuapp.com/appSetUp")!)
                 request.HTTPMethod = "POST"
-                let postString = "email=" + EmailField.text! + "&full_name="+NameField.text!+"&phone="+PhoneField.text!+"&password="+PasswordField.text!;
+                let postString = "email=" + EmailField.text! + "&full_name="+NameField.text!+"&password="+PasswordField.text!;
                 request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
                 let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
                     guard error == nil && data != nil else {

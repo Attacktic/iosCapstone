@@ -26,6 +26,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.presentViewController(nextViewController, animated:true, completion:nil)
         })
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ActivityCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! ActivityCell
         var keys = Array(imagedata.keys)
@@ -106,8 +107,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                         } else {
                             if let data = json as? NSArray {
                                 var user_key:String!
-                                //user_key = "appnamezpco1ae76f3t"
-                                user_key = "appname8qj3m42cg1l6"
+                                user_key = data[0]["key"]!
                                 let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAIYBDS3NHZ2AIPZ2A", secretKey: "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")
                                 let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
                                 AWSS3.registerS3WithConfiguration(configuration, forKey: user_key)
@@ -170,15 +170,6 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView!.alwaysBounceVertical = true
-        refresher.tintColor = UIColor.blackColor()
-        refresher.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
-        tableView!.addSubview(refresher)
-        getData()
-    }
-    
     func stopRefresher()
     {
         refresher.endRefreshing()
@@ -189,6 +180,16 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
         getData()
         stopRefresher()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView!.alwaysBounceVertical = true
+        refresher.tintColor = UIColor.blackColor()
+        refresher.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
+        tableView!.addSubview(refresher)
+        getData()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
