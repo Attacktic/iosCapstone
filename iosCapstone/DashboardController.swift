@@ -108,7 +108,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                             if let data = json as? NSArray {
                                 var user_key:String!
                                 user_key = data[0]["key"]!
-                                let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAIYBDS3NHZ2AIPZ2A", secretKey: "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")
+                                let credentialsProvider = AWSStaticCredentialsProvider(accessKey: AK, secretKey: SK)
                                 let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
                                 AWSS3.registerS3WithConfiguration(configuration, forKey: user_key)
                                 let s3 = AWSS3.S3ForKey(user_key)

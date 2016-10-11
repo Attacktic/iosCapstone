@@ -20,6 +20,7 @@
 		9C0B0C2C1DA4E2C3009EAB6D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C2B1DA4E2C3009EAB6D /* CollectionViewCell.swift */; };
 		9C0B0C2E1DA4E393009EAB6D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B0C2D1DA4E393009EAB6D /* ImageViewController.swift */; };
 		9C10C63D1DAC63610077C5A1 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10C63C1DAC63600077C5A1 /* Help.swift */; };
+		9C10C63F1DACAC490077C5A1 /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C10C63E1DACAC490077C5A1 /* keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9C0B0C2B1DA4E2C3009EAB6D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9C0B0C2D1DA4E393009EAB6D /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9C10C63C1DAC63600077C5A1 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		9C10C63E1DACAC490077C5A1 /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				9C0B0C291DA4BFEC009EAB6D /* ActView.swift */,
 				9C0B0C1F1DA4088E009EAB6D /* LoginViewController.swift */,
 				9C0B0C1D1DA4083A009EAB6D /* DashboardController.swift */,
+				9C10C63E1DACAC490077C5A1 /* keys.swift */,
 				9C0B0C101DA4018F009EAB6D /* Assets.xcassets */,
 				9C0B0C121DA4018F009EAB6D /* LaunchScreen.storyboard */,
 				9C0B0C151DA4018F009EAB6D /* Info.plist */,
@@ -236,6 +239,7 @@
 				9C10C63D1DAC63610077C5A1 /* Help.swift in Sources */,
 				9C0B0C261DA41055009EAB6D /* ActivityCell.swift in Sources */,
 				9C0B0C2C1DA4E2C3009EAB6D /* CollectionViewCell.swift in Sources */,
+				9C10C63F1DACAC490077C5A1 /* keys.swift in Sources */,
 				9C0B0C2A1DA4BFEC009EAB6D /* ActView.swift in Sources */,
 				9C0B0C1E1DA4083A009EAB6D /* DashboardController.swift in Sources */,
 				9C0B0C2E1DA4E393009EAB6D /* ImageViewController.swift in Sources */,
