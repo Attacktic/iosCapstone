@@ -43,8 +43,10 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
             if (todayis == today("test")){
                 day = "Today"
             }
+            let am1 = val!.endIndex.advancedBy(-2)
+            let am = val!.substringFromIndex(am1)
             let time = val!.componentsSeparatedByString(":")[1].componentsSeparatedByString("-")[3]
-            cell.actTime.text = day + " at " + time + " " + amPm(time).uppercaseString
+            cell.actTime.text = day + " at " + time + " " + am
             let numImages = String(image.count)
             if (numImages == "1"){
                 cell.items.text = numImages + " Frame"
@@ -127,6 +129,8 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                             let i = imagedata[date]!["count"] as! Int
                                             imagedata[date]!["count"] = i + 1
                                         } else {
+                                            print("new DAte")
+                                            print(date)
                                             imagedata[date] = [
                                                 "count": 1,
                                                 "date": img_key,
@@ -145,6 +149,7 @@ class DashController: UIViewController, UITableViewDataSource, UITableViewDelega
                                                     array.append(image!)
                                                 }
                                                 imagedata[date]!["images"] = array
+                                                print(imagedata)
                                                 self.tableView?.reloadData()
                                             }
                                         } else {

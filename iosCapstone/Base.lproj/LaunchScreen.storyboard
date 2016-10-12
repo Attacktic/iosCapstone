@@ -9,34 +9,37 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ppy" translatesAutoresizingMaskIntoConstraints="NO" id="XSs-5v-tkd">
-                                <rect key="frame" x="119" y="81" width="363" height="334"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titlenew" translatesAutoresizingMaskIntoConstraints="NO" id="UzO-jc-rrM">
+                                <rect key="frame" x="57" y="432" width="301" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Plt-yJ-A97"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TITLE2" translatesAutoresizingMaskIntoConstraints="NO" id="YtY-5D-i7p">
-                                <rect key="frame" x="119" y="291" width="385" height="205"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline2" translatesAutoresizingMaskIntoConstraints="NO" id="ix6-HW-I8k">
+                                <rect key="frame" x="38" y="93" width="339" height="339"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.085535849220343796" green="0.075330054382300116" blue="0.20565502450980389" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YtY-5D-i7p" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="271" id="7jI-gn-UJ1"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="XSs-5v-tkd" secondAttribute="bottom" constant="185" id="9aa-Er-v2G"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YtY-5D-i7p" secondAttribute="trailing" constant="76" id="HcO-qj-Zxs"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YtY-5D-i7p" secondAttribute="bottom" constant="104" id="Sqa-Hl-5J1"/>
-                            <constraint firstItem="XSs-5v-tkd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g9w-oF-S8l"/>
-                            <constraint firstItem="XSs-5v-tkd" firstAttribute="leading" secondItem="YtY-5D-i7p" secondAttribute="leading" id="h2D-Mp-Aue"/>
-                            <constraint firstItem="XSs-5v-tkd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="99" id="hBP-OK-Unt"/>
-                            <constraint firstItem="XSs-5v-tkd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="61" id="sJd-ky-My5"/>
+                            <constraint firstItem="UzO-jc-rrM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="37" id="2cy-s8-O4C"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UzO-jc-rrM" secondAttribute="bottom" constant="208" id="3o7-4U-if9"/>
+                            <constraint firstItem="ix6-HW-I8k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="C4X-eo-u4w"/>
+                            <constraint firstItem="ix6-HW-I8k" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="18" id="CEP-nM-R4c"/>
+                            <constraint firstItem="ix6-HW-I8k" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="73" id="Km9-D6-klt"/>
+                            <constraint firstItem="ix6-HW-I8k" firstAttribute="centerX" secondItem="UzO-jc-rrM" secondAttribute="centerX" id="TeG-G8-wIi"/>
+                            <constraint firstItem="UzO-jc-rrM" firstAttribute="top" secondItem="ix6-HW-I8k" secondAttribute="bottom" id="oaM-zL-1Kh"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TITLE2" width="1280" height="214"/>
-        <image name="ppy" width="500" height="500"/>
+        <image name="outline2" width="320" height="320"/>
+        <image name="titlenew" width="1134" height="190"/>
     </resources>
 </document>

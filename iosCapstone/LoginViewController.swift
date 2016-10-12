@@ -50,12 +50,11 @@ class LoginController: UIViewController {
                             
                         })
                     } else {
-                        self.AlertMessage.text = responseString;
+                        self.AlertMessage.text = "Email/Password Don't Match"
                     }
                 }
             }
             task.resume()
-            
         }
     }
     
